@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Deckula Game Info</title>
+
+<script defer
+src="https://cloud.umami.is/script.js"
+data-website-id="34c00f24-9584-4cfa-8b5e-b88dd715cdb0">
+</script>
+
+<!-- ====================================================== -->
+<!-- SECTION 1! - CSS                                       -->
+<!-- ====================================================== -->
+
+<style>
+
+body
+{
+    margin:0;
+    padding:0;
+
+    background-color:black;
+}
+
+#ButtonBar
+{
+    position:fixed;
+
+    top:0;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:1240px;
+    height:55px;
+
+    background-color:black;
+
+    text-align:center;
+
+    z-index:1000;
+}
+
+.MenuButton
+{
+    width:180px;
+    height:30px;
+
+    margin-top:15px;
+
+    cursor:pointer;
+}
+
+#Content
+{
+    width:1240px;
+
+    margin:auto;
+
+    padding-top:50px;
+}
+
+.PageImage
+{
+    display:block;
+
+    width:1240px;
+    height:640px;
+
+    margin:0;
+    padding:0;
+}
+
+.SectionAnchor
+{
+    height:1px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ====================================================== -->
+<!-- SECTION 2! - PLAYFIELD                                 -->
+<!-- ====================================================== -->
+
+<div id="ButtonBar">
+
+    <img
+        id="BtnRules"
+        class="MenuButton"
+        src="Btn_Rules.gif">
+
+    <img
+        id="BtnGamePlay"
+        class="MenuButton"
+        src="Btn_GamePlay.gif">
+
+    <img
+        id="BtnFAQs"
+        class="MenuButton"
+        src="Btn_FAQs.gif">
+
+    <img
+        id="BtnGameCredits"
+        class="MenuButton"
+        src="Btn_GameCredits.gif">
+
+    <img
+        id="BtnGallery"
+        class="MenuButton"
+        src="Btn_Gallery.gif">
+
+</div>
+
+<div id="Content">
+
+    <img
+        class="PageImage"
+        src="IntrPage.png">
+
+    <div
+        id="RulesSection"
+        class="SectionAnchor">
+    </div>
+
+    <img
+        class="PageImage"
+        src="Rules_1.png">
+
+    <img
+        class="PageImage"
+        src="Rules_2.png">
+
+    <img
+        class="PageImage"
+        src="Rules_3.png">
+
+    <img
+        class="PageImage"
+        src="Rules_4.png">
+
+    <img
+        class="PageImage"
+        src="Rules_5.png">
+
+    <div
+        id="GamePlaySection"
+        class="SectionAnchor">
+    </div>
+
+    <div
+        id="FAQSection"
+        class="SectionAnchor">
+    </div>
+
+    <div
+        id="CreditsSection"
+        class="SectionAnchor">
+    </div>
+
+    <div
+        id="GallerySection"
+        class="SectionAnchor">
+    </div>
+
+</div>
+
+<!-- ====================================================== -->
+<!-- SECTION 3! - GLOBAL VARIABLES                          -->
+<!-- ====================================================== -->
+
+<script>
+
+var ScrollOffset;
+
+</script>
+
+<!-- ====================================================== -->
+<!-- SECTION 4! - FUNCTIONS                                 -->
+<!-- ====================================================== -->
+
+<script>
+
+function JumpToRules()
+{
+    document
+        .getElementById(
+            "RulesSection"
+        )
+        .scrollIntoView(
+            {
+                behavior:"smooth"
+            }
+        );
+}
+
+function JumpToGamePlay()
+{
+    document
+        .getElementById(
+            "GamePlaySection"
+        )
+        .scrollIntoView(
+            {
+                behavior:"smooth"
+            }
+        );
+}
+
+function JumpToFAQs()
+{
+    document
+        .getElementById(
+            "FAQSection"
+        )
+        .scrollIntoView(
+            {
+                behavior:"smooth"
+            }
+        );
+}
+
+function JumpToCredits()
+{
+    document
+        .getElementById(
+            "CreditsSection"
+        )
+        .scrollIntoView(
+            {
+                behavior:"smooth"
+            }
+        );
+}
+
+function JumpToGallery()
+{
+    document
+        .getElementById(
+            "GallerySection"
+        )
+        .scrollIntoView(
+            {
+                behavior:"smooth"
+            }
+        );
+}
+
+</script>
+
+<!-- ====================================================== -->
+<!-- SECTION 5! - MOUSE EVENTS                              -->
+<!-- ====================================================== -->
+
+<script>
+
+document
+    .getElementById(
+        "BtnRules"
+    )
+    .onclick =
+        JumpToRules;
+
+document
+    .getElementById(
+        "BtnGamePlay"
+    )
+    .onclick =
+        JumpToGamePlay;
+
+document
+    .getElementById(
+        "BtnFAQs"
+    )
+    .onclick =
+        JumpToFAQs;
+
+document
+    .getElementById(
+        "BtnGameCredits"
+    )
+    .onclick =
+        JumpToCredits;
+
+document
+    .getElementById(
+        "BtnGallery"
+    )
+    .onclick =
+        JumpToGallery;
+
+</script>
+
+<!-- ====================================================== -->
+<!-- SECTION 6! - CONTENT                                   -->
+<!-- ====================================================== -->
+
+<!--
+IntrPage.png
+
+Rules_1.png
+Rules_2.png
+Rules_3.png
+Rules_4.png
+Rules_5.png
+
+Later:
+
+GamePlay_1.png
+GamePlay_2.png
+
+FAQ_1.png
+
+Credits_1.png
+
+Gallery_1.png
+-->
+
+<!-- ====================================================== -->
+<!-- SECTION 7! - TIMER                                     -->
+<!-- ====================================================== -->
+
+<script>
+
+</script>
+
+</body>
+</html>
