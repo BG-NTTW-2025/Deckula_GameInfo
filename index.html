@@ -81,6 +81,7 @@ body
 .SectionAnchor
 {
     height:1px;
+    scroll-margin-top:10px;
 }
 
 </style>
@@ -99,7 +100,10 @@ body
 
 <div id="ButtonBar">
 
-
+    <img
+        id="BtnGameCredits"
+        class="MenuButton"
+        src="Btn_GameCredits.gif">
 
     <img
         id="BtnRules"
@@ -117,11 +121,6 @@ body
         src="Btn_FAQs.gif">
 
     <img
-        id="BtnGameCredits"
-        class="MenuButton"
-        src="Btn_GameCredits.gif">
-
-    <img
         id="BtnGallery"
         class="MenuButton"
         src="Btn_Gallery.gif">
@@ -136,15 +135,21 @@ body
         color:yellow;
         font-size:20px;
         z-index:999999;
-    /*    display:none;	*/ /*Onzichtbaar*/	
+        display:none;	 /*Onzichtbaar*/	
     ">
 </div>	
 
 <div id="Content">
 
+    <div
+        id="CreditSection"
+        class="SectionAnchor">
+    </div>
+
     <img
         class="PageImage"
-        src="IntrPage.png">
+        src="Credit.png">	
+
 
     <div
         id="RulesSection"
@@ -200,11 +205,14 @@ body
         id="FAQSection"
         class="SectionAnchor">
     </div>
+	
+	<img
+        class="TableImage"
+        src="FAQs_1.png">
 
-    <div
-        id="CreditsSection"
-        class="SectionAnchor">
-    </div>
+	<img
+        class="TableImage"
+        src="FAQs_2.png">		
 
     <div
         id="GallerySection"
@@ -233,6 +241,19 @@ var ScrollOffset;
 <!-- ====================================================== -->
 
 <script>
+
+function JumpToCredits()
+{
+    document
+        .getElementById(
+            "CreditSection"
+        )
+        .scrollIntoView(
+            {
+                behavior:"smooth"
+            }
+        );
+}
 
 function JumpToRules()
 {
@@ -273,18 +294,7 @@ function JumpToFAQs()
         );
 }
 
-function JumpToCredits()
-{
-    document
-        .getElementById(
-            "CreditsSection"
-        )
-        .scrollIntoView(
-            {
-                behavior:"smooth"
-            }
-        );
-}
+
 
 function JumpToGallery()
 {
@@ -311,6 +321,13 @@ function JumpToGallery()
 
 document
     .getElementById(
+        "BtnGameCredits"
+    )
+    .onclick =
+        JumpToCredits;
+
+document
+    .getElementById(
         "BtnRules"
     )
     .onclick =
@@ -329,13 +346,6 @@ document
     )
     .onclick =
         JumpToFAQs;
-
-document
-    .getElementById(
-        "BtnGameCredits"
-    )
-    .onclick =
-        JumpToCredits;
 
 document
     .getElementById(
