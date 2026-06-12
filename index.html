@@ -93,7 +93,13 @@ body
 <!-- SECTION 2! - PLAYFIELD                                 -->
 <!-- ====================================================== -->
 
+<!-- X-Y Coordinaten -->
+
+
+
 <div id="ButtonBar">
+
+
 
     <img
         id="BtnRules"
@@ -121,6 +127,18 @@ body
         src="Btn_Gallery.gif">
 
 </div>
+<div
+    id="DebugXY"
+    style="
+        position:fixed;
+        left:10px;
+        top:20px;
+        color:yellow;
+        font-size:20px;
+        z-index:999999;
+    /*    display:none;	*/ /*Onzichtbaar*/	
+    ">
+</div>	
 
 <div id="Content">
 
@@ -136,7 +154,7 @@ body
     <img
         class="PageImage"
         src="Rules_1.png">
-
+		
     <img
         class="PageImage"
         src="Rules_2.png">
@@ -157,6 +175,26 @@ body
         id="GamePlaySection"
         class="SectionAnchor">
     </div>
+	
+	<img
+        class="TableImage"
+        src="TableS_1.png">
+
+    <img
+        class="TableImage"
+        src="TableS_2.png">
+
+    <img
+        class="TableImage"
+        src="TableS_3.png">
+
+    <img
+        class="TableImage"
+        src="TableS_4.png">
+
+    <img
+        class="TableImage"
+        src="TableS_5.png">		
 
     <div
         id="FAQSection"
@@ -174,6 +212,11 @@ body
     </div>
 
 </div>
+
+
+		
+	
+
 
 <!-- ====================================================== -->
 <!-- SECTION 3! - GLOBAL VARIABLES                          -->
@@ -256,6 +299,8 @@ function JumpToGallery()
         );
 }
 
+
+
 </script>
 
 <!-- ====================================================== -->
@@ -298,6 +343,20 @@ document
     )
     .onclick =
         JumpToGallery;
+		
+document.addEventListener(
+    "pointermove",
+    function(e)
+{
+    document.getElementById(
+        "DebugXY"
+    ).innerHTML =
+        "X=" +
+        e.clientX +
+        " Y=" +
+        e.clientY;
+});	
+		
 
 </script>
 
