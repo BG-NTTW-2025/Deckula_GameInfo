@@ -260,7 +260,7 @@ body
 
 <script>
 
-
+const TrackUmami = true; // Verander naar true indien je wilt tracken
 
 </script>
 
@@ -272,6 +272,11 @@ body
 
 function JumpToCredits()
 {
+
+if(window.umami &&  TrackUmami)  // = TrackUmami == true. change const TrackUmami = true;
+{
+    umami.track("Credits");
+}
     document
         .getElementById(
             "CreditSection"
