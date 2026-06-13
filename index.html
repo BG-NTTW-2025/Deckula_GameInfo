@@ -270,13 +270,13 @@ body
 
 <script>
 
-if(window.umami &&  TrackUmami)  // = TrackUmami == true. change const TrackUmami = true;
-{
-    umami.track("Show Braves");
-}
-
 function JumpToCredits()
 {
+
+if(window.umami &&  TrackUmami)  // = TrackUmami == true. change const TrackUmami = true;
+{
+    umami.track("Credits");
+}
     document
         .getElementById(
             "CreditSection"
