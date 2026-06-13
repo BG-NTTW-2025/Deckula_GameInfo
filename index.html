@@ -84,6 +84,37 @@ body
     scroll-margin-top:10px;
 }
 
+.GalleryContainer
+{
+    position:relative;
+
+    width:1240px;
+    height:640px;
+
+    background-color:black;
+}
+
+.SmallCard
+{
+    position:absolute;
+
+    width:70px;
+    height:98px;
+
+    cursor:pointer;
+}
+
+#BigCard
+{
+    position:absolute;
+
+    left:440px;
+    top:30px;
+
+    width:360px;
+    height:504px;
+}
+
 </style>
 
 </head>
@@ -126,18 +157,6 @@ body
         src="Btn_Gallery.gif">
 
 </div>
-<div
-    id="DebugXY"
-    style="
-        position:fixed;
-        left:10px;
-        top:20px;
-        color:yellow;
-        font-size:20px;
-        z-index:999999;
-        display:none;	 /*Onzichtbaar*/	
-    ">
-</div>	
 
 <div id="Content">
 
@@ -182,23 +201,23 @@ body
     </div>
 	
 	<img
-        class="TableImage"
+        class="PageImage"
         src="TableS_1.png">
 
     <img
-        class="TableImage"
+        class="PageImage"
         src="TableS_2.png">
 
     <img
-        class="TableImage"
+        class="PageImage"
         src="TableS_3.png">
 
     <img
-        class="TableImage"
+        class="PageImage"
         src="TableS_4.png">
 
     <img
-        class="TableImage"
+        class="PageImage"
         src="TableS_5.png">		
 
     <div
@@ -207,17 +226,26 @@ body
     </div>
 	
 	<img
-        class="TableImage"
+        class="PageImage"
         src="FAQs_1.png">
 
 	<img
-        class="TableImage"
+        class="PageImage"
         src="FAQs_2.png">		
 
     <div
         id="GallerySection"
         class="SectionAnchor">
     </div>
+
+<div
+    id="GalleryContainer"
+    class="GalleryContainer">
+
+    <img
+        id="BigCard"
+        src="https://bg-nttw-2025.github.io/Deckula/C01.png">
+
 
 </div>
 
@@ -232,7 +260,7 @@ body
 
 <script>
 
-var ScrollOffset;
+
 
 </script>
 
@@ -309,7 +337,123 @@ function JumpToGallery()
         );
 }
 
+function CreateGallery()
+{
+    let Gallery;
+    let Card;
+    let Nr;
+    let Row;
+    let Col;
 
+    Gallery =
+        document.getElementById(
+            "GalleryContainer"
+        );
+
+    for(let i=0;i<25;i++)
+    {
+        Nr =
+            String(i + 1)
+            .padStart(2,"0");
+
+        Row =
+            Math.floor(i / 5);
+
+        Col =
+            i % 5;
+
+        Card =
+            document.createElement(
+                "img"
+            );
+
+        Card.className =
+            "SmallCard";
+
+        Card.src =
+            "https://bg-nttw-2025.github.io/Deckula/C"
+            + Nr
+            + ".png";
+
+        Card.style.left =
+            (25 + Col * 80)
+            + "px";
+
+        Card.style.top =
+            (25 + Row * 105)
+            + "px";
+
+        Card.dataset.card =
+            Card.src;
+
+        Card.addEventListener(
+            "mouseenter",
+            function()
+        {
+            document.getElementById(
+                "BigCard"
+            ).src =
+                this.dataset.card;
+        });
+
+        Gallery.appendChild(
+            Card
+        );
+    }
+
+    for(let i=25;i<50;i++)
+    {
+        Nr =
+            String(i + 1)
+            .padStart(2,"0");
+
+        Row =
+            Math.floor(
+                (i - 25) / 5
+            );
+
+        Col =
+            (i - 25) % 5;
+
+        Card =
+            document.createElement(
+                "img"
+            );
+
+        Card.className =
+            "SmallCard";
+
+        Card.src =
+            "https://bg-nttw-2025.github.io/Deckula/C"
+            + Nr
+            + ".png";
+
+        Card.style.left =
+            (815 + Col * 80)
+            + "px";
+
+        Card.style.top =
+            (25 + Row * 105)
+            + "px";
+
+        Card.dataset.card =
+            Card.src;
+
+        Card.addEventListener(
+            "mouseenter",
+            function()
+        {
+            document.getElementById(
+                "BigCard"
+            ).src =
+                this.dataset.card;
+        });
+
+        Gallery.appendChild(
+            Card
+        );
+    }
+}
 
 </script>
 
@@ -354,19 +498,6 @@ document
     .onclick =
         JumpToGallery;
 		
-document.addEventListener(
-    "pointermove",
-    function(e)
-{
-    document.getElementById(
-        "DebugXY"
-    ).innerHTML =
-        "X=" +
-        e.clientX +
-        " Y=" +
-        e.clientY;
-});	
-		
 
 </script>
 
@@ -374,26 +505,7 @@ document.addEventListener(
 <!-- SECTION 6! - CONTENT                                   -->
 <!-- ====================================================== -->
 
-<!--
-IntrPage.png
-
-Rules_1.png
-Rules_2.png
-Rules_3.png
-Rules_4.png
-Rules_5.png
-
-Later:
-
-GamePlay_1.png
-GamePlay_2.png
-
-FAQ_1.png
-
-Credits_1.png
-
-Gallery_1.png
--->
+CreateGallery();
 
 <!-- ====================================================== -->
 <!-- SECTION 7! - TIMER                                     -->
