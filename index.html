@@ -123,7 +123,39 @@ body
   opacity: 0.5;
 }
 
+#OfficialSiteLink
+{
+    position:absolute;
 
+    left:343px;
+    top:535px;
+
+    width:290px;
+    height:28px;
+
+    cursor:pointer;
+
+    background:rgba(0,255,0,0.2);
+    /* border:1px solid red; */
+    z-index:99999;
+}
+
+#BuyDeckulaLink
+{
+    position:absolute;
+
+    left:696px;
+    top:535px;
+
+    width:220px;
+    height:28px;
+
+    cursor:pointer;
+
+    background:rgba(0,255,0,0.2);
+    /* border:1px solid red; */
+    z-index:99999;
+}
 
 
 </style>
@@ -136,7 +168,9 @@ body
 <!-- SECTION 2! - PLAYFIELD                                 -->
 <!-- ====================================================== -->
 
-<!-- X-Y Coordinaten -->
+
+<div id="OfficialSiteLink"></div>
+<div id="BuyDeckulaLink"></div>
 
 
 
@@ -529,7 +563,26 @@ document
     )
     .onclick =
         JumpToGallery;
-		
+	
+document
+.getElementById("OfficialSiteLink")
+.addEventListener("click", function()
+{
+    window.open(
+        "https://deckula.drmindflip.com/",
+        "_blank"
+    );
+});
+
+document
+.getElementById("BuyDeckulaLink")
+.addEventListener("click", function()
+{
+    window.open(
+        "https://www.drivethrucards.com/en/product/451973/deckula-a-solo-card-game",
+        "_blank"
+    );
+});	
 
 </script>
 
